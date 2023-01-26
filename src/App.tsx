@@ -4,6 +4,7 @@ import "./styles.css";
 
 import { Navbar } from "./components/Navbar/Navbar";
 import TaskList from "./components/TaskList/TaskList";
+import { any } from "prop-types";
 
 let idAcc = 0;
 const generateId = () => {
@@ -12,10 +13,9 @@ const generateId = () => {
 };
 
 export default function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState<any[]>([]);
 
   const addTask = (title, state) => {
-    console.log("A funcao esta sendo chamada em APP");
     const newTask = {
       id: generateId(),
       title,
